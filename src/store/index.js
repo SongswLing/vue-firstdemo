@@ -6,24 +6,24 @@ const state = {
   cart: [
     {
       fonts: "yiliersdfserre",
-      price: 69.9,
+      price: 100.5,
       conut: 1,
-      checked: true,
+      checked: false,
     },
     {
       fonts: "yiliersdfserre",
-      price: 69.9,
+      price: 100,
       conut: 1,
-      checked: true,
+      checked: false,
     },
     {
       fonts: "yiliersdfserre",
-      price: 69.9,
+      price: 100,
       conut: 1,
-      checked: true,
+      checked: false,
     },
   ],
-  choose: true,
+  choose: false,
 };
 const mutations = {
   onchange1(state, checked) {

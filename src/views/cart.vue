@@ -2,7 +2,7 @@
   <div>
     <nor-bar class="norbar">购物车</nor-bar>
     <cart-shoplists></cart-shoplists>
-    <van-submit-bar :price="pullice" button-text="提交订单" @submit="onSubmit">
+    <van-submit-bar :price="pullice*100" button-text="提交订单" @submit="onSubmit">
       <van-checkbox v-model="$store.state.choose" @click='onchange()'>全选</van-checkbox>
       <!-- <template #tip>
         你的收货地址不支持同城送, <span @click="onClickEditAddress">修改地址</span>
