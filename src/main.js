@@ -22,6 +22,9 @@ import {
   CheckboxGroup,
   Stepper,
   SubmitBar,
+  GoodsAction,
+  GoodsActionIcon,
+  GoodsActionButton,
 } from "vant";
 Vue.use(Button);
 Vue.use(Icon);
@@ -38,6 +41,9 @@ Vue.use(Checkbox);
 Vue.use(CheckboxGroup);
 Vue.use(Stepper);
 Vue.use(SubmitBar);
+Vue.use(GoodsAction);
+Vue.use(GoodsActionIcon);
+Vue.use(GoodsActionButton);
 
 new Vue({
   router,

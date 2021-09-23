@@ -31,13 +31,14 @@ const mutations = {
       item.checked = checked;
     });
   },
+
   onchange2(state) {
     const length = state.cart.filter((item) => item.checked === true).length;
-    console.log(length);
-    console.log(state.cart.length);
+    // console.log(length);
+    // console.log(state.cart.length);
     if (length !== state.cart.length) {
       state.choose = false;
-      console.log(state.choose);
+      // console.log(state.choose);
     } else {
       state.choose = true;
     }

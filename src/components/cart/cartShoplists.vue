@@ -28,11 +28,11 @@ export default {
     methods: {
         ...mapMutations(['onchange2']),
         onChange(e){
-            console.log(e);
-            console.log(this.cart[0].conut)
+            // console.log(e);
+            // console.log(this.cart[0].conut)
         },
         onchecked(index){
-            console.log(index)
+            // console.log(index)
             this.onchange2(index)
         }
     },
@@ -44,9 +44,9 @@ export default {
     
 <style lang='less' scoped>
     .comlists{
-        width: 359px;
+        width: 358px;
         background-color: #fff;
-        margin: 8px auto;
+        margin: 10px auto;
         border-radius: 5px;
         .main{
             // border: 1px solid #000;
@@ -85,7 +85,8 @@ export default {
             padding: 0 auto;
             float: right;
              /deep/.van-stepper{
-                margin:2px  1px 2px 4px;
+                margin:2px 2px 2px 4px;
+                // margin: 2px;
                 
             }
             /deep/ .van-stepper--round .van-stepper__minus
