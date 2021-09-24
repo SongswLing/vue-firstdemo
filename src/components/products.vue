@@ -18,10 +18,10 @@
         </div>
 
         <van-goods-action>
-            <van-goods-action-icon icon="chat-o" text="客服" color="#ee0a24" />
-            <van-goods-action-icon icon="cart-o" text="购物车" />
-            <van-goods-action-icon icon="star" text="已收藏" color="#ff5000" />
-            <van-goods-action-button type="warning" text="加入购物车" />
+            <van-goods-action-icon icon="shop-o" text="店铺" color="#ee0a24"/>
+            <van-goods-action-icon icon="chat-o" text="客服" color="#888181" />
+            <van-goods-action-icon icon="star-o" text="收藏" color="#888181" />
+            <van-goods-action-button type="warning" text="加入购物车" @click="addshop"/>
             <van-goods-action-button type="danger" text="立即购买" />
         </van-goods-action>
 
@@ -37,6 +37,7 @@
 </template>
     
 <script>
+import {mapMutations} from 'vuex'
 export default {
     name:'products',
     data() {
@@ -47,16 +48,22 @@ export default {
     },
     mounted() {
         // console.log(this.$route.params.info);
-        this.shopinfo=this.$route.params.info
+        this.shopinfo=this.$route.params.info;
         // console.log(this.shopinfo.imgurl);
     },
     
     methods: {
+        ...mapMutations(['onchange3']),
         onChange(index) {
         this.current = index;
         },
         goback(){
             this.$router.back()
+        },
+        addshop(){
+            this.onchange3(this.shopinfo);
+            // Toast.success('添加成功');
+            this.$toast('提示文案');
         }
     },
 }
@@ -72,6 +79,7 @@ export default {
     padding: 2px 5px;
     font-size: 12px;
     background: rgba(0, 0, 0, 0.1);
+    background-color: rgb(136, 129, 129);
   }
   .swipeimg{
       width: 375px;

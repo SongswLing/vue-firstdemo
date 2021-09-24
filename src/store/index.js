@@ -43,6 +43,12 @@ const mutations = {
       state.choose = true;
     }
   },
+  onchange3(state, newshop) {
+    let newshops = {};
+    newshops.fonts = newshop.comdfont;
+    newshops.price = newshop.newprice;
+    state.cart.push(newshops);
+  },
 };
 const getters = {
   pullice(state) {
