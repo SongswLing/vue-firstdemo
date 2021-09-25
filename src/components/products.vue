@@ -1,5 +1,7 @@
 <template>
+
     <div class='boxs'>
+        
         <van-swipe @change="onChange">
         <van-swipe-item><img src="../assets/shopinfo/2.png" alt="" class='swipeimg'></van-swipe-item>
         <van-swipe-item><img src="../assets/shopinfo/2.png" alt="" class='swipeimg'></van-swipe-item>
@@ -16,15 +18,7 @@
             <img src="../assets/shopinfo/组 10(2).png" alt="">
             <img src="../assets/shopinfo/组 10(1).png" alt="">
         </div>
-
-        <van-goods-action>
-            <van-goods-action-icon icon="shop-o" text="店铺" color="#ee0a24"/>
-            <van-goods-action-icon icon="chat-o" text="客服" color="#888181" />
-            <van-goods-action-icon icon="star-o" text="收藏" color="#888181" />
-            <van-goods-action-button type="warning" text="加入购物车" @click="addshop"/>
-            <van-goods-action-button type="danger" text="立即购买" />
-        </van-goods-action>
-
+   
         <div class="priceinfo">
             <div class="topcontent">
                 <div class="newprice">¥{{shopinfo.newprice}}</div>
@@ -33,25 +27,47 @@
             </div>
             <div class="name">{{shopinfo.comdfont}}</div>
         </div>
+        <productslists ></productslists>
+
+
+        <van-goods-action>
+            <van-goods-action-icon icon="shop-o" text="店铺" color="#ee0a24"/>
+            <van-goods-action-icon icon="chat-o" text="客服" color="#888181" />
+            <van-goods-action-icon icon="star-o" text="收藏" color="#888181" />
+            <van-goods-action-button type="warning" text="加入购物车" @click="addshop"/>
+            <van-goods-action-button type="danger" text="立即购买" />
+        </van-goods-action>
+        
     </div>
+    
 </template>
     
 <script>
 import {mapMutations} from 'vuex'
+import productslists from '../components/products-lists'
 export default {
+    components:{productslists},
     name:'products',
     data() {
         return {
         current: 0,
-        shopinfo:[]
+        shopinfo:[],
+        site:[]
         };
     },
     mounted() {
-        // console.log(this.$route.params.info);
+        // console.log(this.$route.params);
         this.shopinfo=this.$route.params.info;
+        // this.site=JSON.parse(sessionStorage.getItem('site'))
+        // console.log(this.site);
         // console.log(this.shopinfo.imgurl);
     },
-    
+    updated(){
+        // console.log(this.$route);
+        // this.site=this.$route.params.site;
+        // console.log(this.site);
+        
+    },
     methods: {
         ...mapMutations(['onchange3']),
         onChange(index) {
@@ -63,7 +79,8 @@ export default {
         addshop(){
             this.onchange3(this.shopinfo);
             // Toast.success('添加成功');
-            this.$toast('提示文案');
+            this.$toast('添加成功');
+            this.$router.push('/cart')
         }
     },
 }
@@ -72,6 +89,7 @@ export default {
 <style lang='less' scoped>
 .boxs{
     position: relative;
+    padding-bottom: 50px;
     .custom-indicator {
     position: absolute;
     right: 5px;
@@ -79,7 +97,6 @@ export default {
     padding: 2px 5px;
     font-size: 12px;
     background: rgba(0, 0, 0, 0.1);
-    background-color: rgb(136, 129, 129);
   }
   .swipeimg{
       width: 375px;
@@ -118,7 +135,7 @@ export default {
       }
   }
   .priceinfo{
-      width: 375px;
+      width: 355px;
       height: 50px;
       background-color: #fff;
       padding: 10px;

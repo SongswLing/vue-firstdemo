@@ -25,6 +25,9 @@ import {
   GoodsAction,
   GoodsActionIcon,
   GoodsActionButton,
+  AddressList,
+  AddressEdit,
+  Area,
 } from "vant";
 Vue.use(Button);
 Vue.use(Icon);
@@ -44,6 +47,9 @@ Vue.use(SubmitBar);
 Vue.use(GoodsAction);
 Vue.use(GoodsActionIcon);
 Vue.use(GoodsActionButton);
+Vue.use(AddressList);
+Vue.use(AddressEdit);
+Vue.use(Area);
 
 new Vue({
   router,

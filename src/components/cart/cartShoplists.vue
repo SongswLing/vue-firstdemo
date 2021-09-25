@@ -8,7 +8,7 @@
                 <div class="price">¥{{item.price}}</div>
                 <div class="stepper">
                     <van-stepper v-model="item.conut" theme="round" button-size="22"  integer  @change="onChange($event)"/>
-                </div>       
+                </div>
             </div>
         </div>
     </div>

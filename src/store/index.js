@@ -24,6 +24,7 @@ const state = {
     },
   ],
   choose: false,
+  site: [],
 };
 const mutations = {
   onchange1(state, checked) {
@@ -47,7 +48,11 @@ const mutations = {
     let newshops = {};
     newshops.fonts = newshop.comdfont;
     newshops.price = newshop.newprice;
+    newshops.checked = true;
     state.cart.push(newshops);
+  },
+  onchange4(state, sitelist) {
+    state.site = sitelist;
   },
 };
 const getters = {

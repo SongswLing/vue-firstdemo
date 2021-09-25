@@ -7,6 +7,8 @@ const newcom = () => import("../components/newCom");
 import newshop from "../components/cals/newShop";
 const newDrink = () => import("../components/cals/newDrink");
 const products = () => import("../components/products");
+const siteEditor = () => import("../components/siteEditor");
+const addressEdit = () => import("../components/addressEdit");
 const routes = [
   {
     path: "/",
@@ -51,6 +53,15 @@ const routes = [
     path: "/products",
     name: "products",
     component: products,
+  },
+  {
+    path: "/siteEditor",
+    name: "siteEditor",
+    component: siteEditor,
+  },
+  {
+    path: "/addressEdit",
+    component: addressEdit,
   },
 ];
 
