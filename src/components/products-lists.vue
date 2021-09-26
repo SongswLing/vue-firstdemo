@@ -36,7 +36,6 @@
 </template>
     
 <script>
-// import Bus from '../../eventBus'
 
 export default {
     // props:['site'],
@@ -52,10 +51,6 @@ export default {
         }
     },
     mounted(){
-        // Bus.$on('sitego',data=>{
-        //     console.log(data);
-        //     this.formse=data
-        // })
     }
 }
 </script>

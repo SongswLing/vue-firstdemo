@@ -14,6 +14,7 @@
             default-tag-text="默认"
             @add="onAdd"
             @edit="onEdit"
+            
         />
     </div>
 </template>
@@ -21,12 +22,14 @@
 <script>
 import norBar from "../components/norBar"
 // import Bus from '../../eventBus'
-import {mapMutations} from 'vuex'
+import {mapState,mapMutations} from 'vuex'
 export default {
     name:'siteEditor',
     components:{norBar},
     data() {
     return {
+    // ...mapState['site'],
+      isshow:false,
       chosenAddressId: '1',
       list: [
         {
@@ -44,15 +47,49 @@ export default {
         //   isDefault: true,
         },
       ],
-      disabledList: [
-        {
-          id: '3',
-          name: '王五',
-          tel: '1320000000',
-          address: '浙江省杭州市滨江区江南大道 15 号',
-        },
-      ],
+      // disabledList: [
+      //   {
+      //     id: '3',
+      //     name: '王五',
+      //     tel: '1320000000',
+      //     address: '浙江省杭州市滨江区江南大道 15 号',
+      //   },
+      // ],
     };
+  },
+  computed:{
+  },
+  mounted() {
+      console.log(this.$store.state.site)
+      this.$nextTick(function(){
+      let addressEdit=this.$store.state.site
+      if(addressEdit.name){
+        let newlist={}
+          // newlist.id=this.list.length+1;
+          newlist.name=addressEdit.name;
+          newlist.tel=addressEdit.tel;
+          newlist.address=addressEdit.city+addressEdit.country+addressEdit.addressDetail;
+          console.log(newlist)
+          this.list.push(newlist)
+      }else{
+        console.log("wu");
+      }
+          
+      })
+    // console.log(this.$route.params)
+      // console.log(addressEdit.name)
+    console.log(this.list.length)
+    // if(addressEdit){
+    //   this.list.length++
+    // }
+    // if(this.list.length==2){
+    // //   // console.log(addressEdit.content.name)
+    //     console.log("wu") 
+    //       // this.list.length++
+      
+    // }else{
+        
+    // }
   },
   methods: {
       ...mapMutations(['onchange4']),
@@ -69,7 +106,9 @@ export default {
         let indexs=this.chosenAddressId-1;
         // console.log(indexs);
         console.log(this.list[indexs]);
+        // this.$router.push('/products')
         this.$router.push('/products')
+        // this.$router.back()
         // sessionStorage.setItem('site',JSON.stringify(this.list[indexs]));
         // Bus.$emit('sitego',this.list[indexs])
        this.onchange4(this.list[indexs])

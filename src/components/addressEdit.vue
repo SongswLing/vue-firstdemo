@@ -1,5 +1,11 @@
 <template>
     <div>
+      <norBar>
+            <template slot='left-icon' >
+                <van-icon name="arrow-left" color="#fff" @click="goback"/>
+            </template>
+            新增地址
+        </norBar>
         <van-address-edit
             :area-list="areaList"
             show-postal
@@ -16,17 +22,26 @@
 </template>
     
 <script>
+import {areaList} from '../assets/js/areaList.ts'
+import norBar from "../components/norBar"
+import {mapMutations} from 'vuex'
+
 export default {
     name:'addressEdit',
+    components: {norBar},
     data() {
     return {
       areaList,
       searchResult: [],
+      // content:[]
     };
   },
   methods: {
-    onSave() {
-      Toast('save');
+    ...mapMutations(['onchange4']),
+    onSave(content) {
+      this.$toast('save');
+      this.onchange4(content)
+      this.$router.push('/siteEditor')
     },
     onDelete() {
       Toast('delete');
@@ -43,6 +58,9 @@ export default {
         this.searchResult = [];
       }
     },
+    goback(){
+      this.$router.back();
+    }
   },
 }
 </script>

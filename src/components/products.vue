@@ -21,11 +21,11 @@
    
         <div class="priceinfo">
             <div class="topcontent">
-                <div class="newprice">¥{{shopinfo.newprice}}</div>
+                <div class="newprice">¥{{shopinfo.price}}</div>
                 <div class="oldprice">¥{{shopinfo.old}}</div>
                 <div class="stock">库存28</div>
             </div>
-            <div class="name">{{shopinfo.comdfont}}</div>
+            <div class="name">{{shopinfo.fonts}}</div>
         </div>
         <productslists ></productslists>
 
@@ -55,13 +55,27 @@ export default {
         site:[]
         };
     },
+
     mounted() {
+        
+        // console.log(this.$route .params.index);
+        let indexs=this.$route.params.index
+        this.shopinfo=this.$store.state.cart[indexs];
+        
+        // this.shopinfo=this.$route.query
+        console.log(this.shopinfo);
+        // console.log(this.shopinfo);
         // console.log(this.$route.params);
-        this.shopinfo=this.$route.params.info;
+        // this.shopinfo=this.$route.params.info;
+        // Bus.$on('goshopinfo',data=>{
+        //     this.shopinfo=data;
+        //     console.log(this.shopinfo);
+        // })
+    },
+        // console.log(this.shopinfo);
         // this.site=JSON.parse(sessionStorage.getItem('site'))
         // console.log(this.site);
         // console.log(this.shopinfo.imgurl);
-    },
     updated(){
         // console.log(this.$route);
         // this.site=this.$route.params.site;
@@ -74,6 +88,7 @@ export default {
         this.current = index;
         },
         goback(){
+            // this.$router.push('/cart')
             this.$router.back()
         },
         addshop(){

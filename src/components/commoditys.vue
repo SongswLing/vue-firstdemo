@@ -1,15 +1,15 @@
 <template>
 <div class="combox">
-    <div class='commoditys' v-for='(item,index) in comdlists' :key="index">
+    <div class='commoditys' v-for='(item,index) in romdlist' :key="index">
         <img src="../assets/home/commoditys/01(1).png" alt="" class='img-first' @click="toProducts(index)">
         <div class="comd-font"  >
-            {{item.comdfont}}
+            {{romdlist[index].fonts}}
         </div>
         <div class="box">
-            <div class="new-price">{{item.newprice}}</div>
-            <div class="old-price">{{item.old}}</div>
+            <div class="new-price">{{romdlist[index].price}}</div>
+            <div class="old-price">{{romdlist[index].old}}</div>
             <div class="add-price">
-                <img src="../assets/home/commoditys/组 4.png" alt="">
+                <img src="../assets/home/commoditys/组 4.png" alt="" @click="addshop(index)">
             </div>
         </div>
     </div>
@@ -17,13 +17,35 @@
 </template>
     
 <script>
+import {mapMutations} from 'vuex'
 export default {
     name:'commoditys',
-    props:['comdlists'],
+    data() {
+        return{
+            romdlist:[],
+            shopinfo:[]
+            
+        }
+    },
+    created(){
+
+    },
+    mounted() {
+        this.romdlist=this.$store.state.cart
+        // let indexs=this.$route.params.index
+        // this.shopinfo=this.$store.state.cart[indexs]
+        // console.log(this.romdlist[0]);
+    },
     methods: {
+        ...mapMutations(['onchange3']),
         toProducts(index){
-            this.$router.push({name:'products',params:{info:this.comdlists[index]}})
+            this.$router.push({
+                path:`/products/${index}`
+            })
             // console.log(index);
+        },
+        addshop(index){
+            this.onchange3(this.romdlist[index])
         }
     }
 }

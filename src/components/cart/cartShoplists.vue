@@ -3,9 +3,9 @@
         <div class="comlists">
             <div class="main" v-for="(item,index) in cart" :key="index">
                 <van-checkbox v-model="item.checked" checked-color="#ee0a24" class="chbox" @click='onchecked(index)'></van-checkbox>
-                <img src="../../assets//cals/组 6.png" alt="">
-                <div class="fonts">{{item.fonts}}</div>
-                <div class="price">¥{{item.price}}</div>
+                <img src="../../assets//cals/组 6.png" alt="" @click="toProducts(index)">
+                <div class="fonts" @click="toProducts(index)">{{item.fonts}}</div>
+                <div class="price" @click="toProducts(index)">¥{{item.price}}</div>
                 <div class="stepper">
                     <van-stepper v-model="item.conut" theme="round" button-size="22"  integer  @change="onChange($event)"/>
                 </div>
@@ -34,6 +34,11 @@ export default {
         onchecked(index){
             // console.log(index)
             this.onchange2(index)
+        },
+        toProducts(index){
+            this.$router.push({
+                path:`/products/${index}`
+            })
         }
     },
     computed:{

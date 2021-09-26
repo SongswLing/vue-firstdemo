@@ -9,7 +9,7 @@
       </template> -->
     </van-submit-bar>
     <cart-title></cart-title>
-    <commoditys :comdlists='comdlists'></commoditys>
+    <commoditys></commoditys>
     <teb-bar></teb-bar>
   </div>
 </template>
@@ -26,36 +26,7 @@ export default {
   name: "cart",
   data() {
     return{
-      comdlists:[
-        {
-          imgurl:'../assets/home/commoditys/01(1).png',
-          comdfont:'哈哈哈哈哈哈哈哈哈哈哈啊哈1',
-          newprice:13.90,
-          old:10.90,
-          id:0,
-        },
-        {
-          imgurl:'../assets/home/commoditys/01(1).png',
-          comdfont:'哈哈哈哈哈哈哈哈哈哈哈啊哈2',
-          newprice:10.90,
-          old:11.90,
-          id:1
-        },
-        {
-          imgurl:'../assets/home/commoditys/01(1).png',
-          comdfont:'哈哈哈哈哈哈哈哈哈哈哈啊哈3',
-          newprice:11.90,
-          old:12.90,
-          id:2
-        },
-        {
-          imgurl:'../assets/home/commoditys/01(1).png',
-          comdfont:'哈哈哈哈哈哈哈哈哈哈哈啊哈4',
-          newprice:12.90,
-          old:13.90,
-          id:3
-        },
-      ]
+      
     }
   },
   computed: {

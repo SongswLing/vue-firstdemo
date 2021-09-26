@@ -50,7 +50,7 @@ const routes = [
     component: newcom,
   },
   {
-    path: "/products",
+    path: "/products/:index",
     name: "products",
     component: products,
   },
