@@ -40,8 +40,8 @@ export default {
     ...mapMutations(['onchange4']),
     onSave(content) {
       this.$toast('save');
-      this.onchange4(content)
-      this.$router.push('/siteEditor')
+      // this.onchange4(content)
+      this.$router.push({name:'siteEditor',params:{content}})
     },
     onDelete() {
       Toast('delete');

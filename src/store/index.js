@@ -3,28 +3,23 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 const state = {
-  // cart: [
-  //   {
-  //     fonts: "yiliersdfserre",
-  //     price: 100.5,
-  //     conut: 1,
-  //     checked: false,
-  //   },
-  //   {
-  //     fonts: "yiliersdfserre",
-  //     price: 100,
-  //     conut: 1,
-  //     checked: false,
-  //   },
-  //   {
-  //     fonts: "yiliersdfserre",
-  //     price: 100,
-  //     conut: 1,
-  //     checked: false,
-  //   },
-  // ],
   choose: false,
-  site: [],
+  siteinfo: [
+    {
+      name: "张三",
+      call: 12223334355,
+      site: "河南省郑州市中原区",
+      id: 1,
+      checked: false,
+    },
+    {
+      name: "李四",
+      call: 12223334355,
+      site: "河南省郑州市中原区",
+      id: 2,
+      checked: false,
+    },
+  ],
   cart: [
     {
       imgurl: "../assets/home/commoditys/01(1).png",
@@ -86,8 +81,16 @@ const mutations = {
     state.cart.push(newshops);
   },
   onchange4(state, sitelist) {
-    state.site = sitelist;
+    state.siteinfo.push(sitelist);
     console.log(state.site);
+  },
+  onchange5(state, index) {
+    const falsesite = state.siteinfo.filter((item) => {
+      return item.id !== index;
+    });
+    falsesite.forEach((item) => {
+      item.checked = false;
+    });
   },
 };
 const getters = {
@@ -98,6 +101,10 @@ const getters = {
       price += item.price * item.conut;
     });
     return price;
+  },
+  gosite(state) {
+    const file = state.siteinfo.filter((item) => item.checked === true);
+    return file;
   },
 };
 export default new Vuex.Store({

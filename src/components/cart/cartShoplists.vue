@@ -16,6 +16,7 @@
     
 <script>
 import {mapState,mapMutations} from 'vuex'
+// import {cart} from '../../../public/data/goods'
 export default {
     name:'cartShoplists',
     data() {
@@ -23,7 +24,11 @@ export default {
         return{
             // checked: true,
             // value:1,
+            // cart
         }
+    },
+    mounted(){
+        // console.log(this.cart[1].fonts);
     },
     methods: {
         ...mapMutations(['onchange2']),
@@ -49,7 +54,7 @@ export default {
     
 <style lang='less' scoped>
     .comlists{
-        width: 358px;
+        width: 355px;
         background-color: #fff;
         margin: 10px auto;
         border-radius: 5px;
@@ -89,6 +94,7 @@ export default {
             border-radius: 15px;
             padding: 0 auto;
             float: right;
+            transform: translateY(-18px);
              /deep/.van-stepper{
                 margin:2px 2px 2px 4px;
                 // margin: 2px;

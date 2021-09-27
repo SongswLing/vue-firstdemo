@@ -1,0 +1,52 @@
+{
+    "cart": [
+        {
+          "imgurl":"../assets/home/commoditys/01(1).png",
+          "fonts": "哈哈哈哈哈哈哈哈哈哈哈啊哈1",
+          "price": 13.9,
+          "old": 10.9,
+          "conut": 1,
+          "id": 0
+        },
+        {
+            "imgurl":"../assets/home/commoditys/01(1).png",
+            "fonts": "哈哈哈哈哈哈哈哈哈哈哈啊哈2",
+            "price": 13.9,
+            "old": 10.9,
+            "conut": 1,
+            "id": 1
+        },
+        {
+            "imgurl":"../assets/home/commoditys/01(1).png",
+            "fonts": "哈哈哈哈哈哈哈哈哈哈哈啊哈3",
+            "price": 13.9,
+            "old": 10.9,
+            "conut": 1,
+            "id": 2
+        },
+        {
+            "imgurl":"../assets/home/commoditys/01(1).png",
+            "fonts": "哈哈哈哈哈哈哈哈哈哈哈啊哈4",
+            "price": 13.9,
+            "old": 10.9,
+            "conut": 1,
+            "id": 3
+        }
+    ],
+    "siteinfo": [
+        {
+          "name": "张三",
+          "call": 12223334355,
+          "site": "河南省郑州市中原区",
+          "id": 1,
+          "checked": true
+        },
+        {
+          "name": "李四",
+          "call": 12223334355,
+          "site": "河南省郑州市中原区",
+          "id": 2,
+          "checked": false
+        }
+    ]
+}

@@ -12,7 +12,7 @@
         </div>
         <div class="site" @click='tosite'>
             <p>送至</p>
-            <p>{{this.$store.state.site.address || "暂无地址"}}  </p>
+            <p>{{ siteinfo[0].site || "暂无地址"}}  </p>
             <van-icon name="arrow" class="icons" size="15"/>
         </div>
         <div class="botom">
@@ -36,22 +36,33 @@
 </template>
     
 <script>
-
+import {mapGetters} from 'vuex'
+import{siteinfo} from '../../public/data/goods'
 export default {
     // props:['site'],
     name:"products-lists",
     data() {
         return{
-            formse:[]
+            formse:[],
+            siteinfo
         }
+    },
+    mounted(){
+        console.log(this.siteinfo);
+    },
+    computed:{
+        // ...mapGetters(['gosite']),
+    //     gosite(){
+    //         console.log();
+    //     }
+    // },
     },
     methods: {
         tosite(){
             this.$router.push('/siteEditor')
-        }
+        },
     },
-    mounted(){
-    }
+    
 }
 </script>
     

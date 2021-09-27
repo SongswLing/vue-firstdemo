@@ -60,6 +60,7 @@ export default {
         
         // console.log(this.$route .params.index);
         let indexs=this.$route.params.index
+        console.log(indexs);
         this.shopinfo=this.$store.state.cart[indexs];
         
         // this.shopinfo=this.$route.query
