@@ -33,13 +33,20 @@ export default {
     return {
       areaList,
       searchResult: [],
+      addcenten:[]
       // content:[]
     };
+  },
+  provide(){
+    return{
+        addsite:this.addcenten
+    }
   },
   methods: {
     ...mapMutations(['onchange4']),
     onSave(content) {
       this.$toast('save');
+      this.addcenten=content
       // this.onchange4(content)
       this.$router.push({name:'siteEditor',params:{content}})
     },

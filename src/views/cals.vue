@@ -1,5 +1,6 @@
 <template>
   <div class='box'>
+    
     <teb-bar></teb-bar>
     <top-bar></top-bar>
     <div class='main'>

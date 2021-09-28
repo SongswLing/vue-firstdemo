@@ -24,38 +24,28 @@ export default {
     data(){
         return{
             siteinfo,
+            newsite:this.address
         }
     },
     computed:{
         
     },
     mounted() {
-        console.log(this.address);
-        if(this.address){
-            this.siteinfo.push()
-        }else{
-            this.$nextTick(()=>{
-            let newsite={}
-                newsite.name=this.address.name
-                newsite.call=this.address.tel
-                newsite.site=this.address.province+this.address.city+this.address.county
-                newsite.checked=false
-                newsite.id=this.siteinfo.length+1
+        console.log(this.newsite)
+            let addnewsiteinfo={}
+                addnewsiteinfo.name=this.newsite.name
+                addnewsiteinfo.call=this.newsite.tel
+                addnewsiteinfo.site=this.newsite.province+this.newsite.city+this.newsite.county
+                addnewsiteinfo.checked=false
+                addnewsiteinfo.id=this.siteinfo.length+1
             // if(newsite.id>this.siteinfo.length){
                 // console.log("wu")
             
-            console.log(this.siteinfo.length);
-            this.siteinfo.push(newsite)
-        })
-        }
-        
-        
-            
-        
-                
-        
-        
-    },
+            console.log(addnewsiteinfo);
+            if(addnewsiteinfo.name!==undefined){
+            this.siteinfo.push(addnewsiteinfo)
+            }
+        },
     methods: {
         // ...mapMutations(['onchange5']),
         change(index){
