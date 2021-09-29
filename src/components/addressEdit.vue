@@ -37,11 +37,6 @@ export default {
       // content:[]
     };
   },
-  provide(){
-    return{
-        addsite:this.addcenten
-    }
-  },
   methods: {
     ...mapMutations(['onchange4']),
     onSave(content) {

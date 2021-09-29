@@ -42,18 +42,19 @@ export default {
     // ...mapState['site'],
     // address:[]
             siteinfo,
-            siteinfoadd:[],
+            siteinfoadd:[]
+
 
      
   }
   },
-  inject:['addsite'],
   computed:{
     //   ...mapGetters['gosite'],
   },
   mounted() {
       console.log(this.addsite);
-          this.siteinfoadd=this.$route.params.content
+      this.$nextTick(function(){
+           this.siteinfoadd=this.$route.params.content
           console.log(this.siteinfo)
           console.log(this.siteinfoadd)
             let addnewsiteinfo={}
@@ -63,6 +64,8 @@ export default {
                 addnewsiteinfo.checked=false
                 addnewsiteinfo.id=this.siteinfo.length+1
                 this.siteinfo.push(addnewsiteinfo)
+      })
+         
         },
     
   methods: {

@@ -41,11 +41,12 @@ export default {
         toProducts(index){
             this.$router.push({
                 path:`/products/${index}`
-            })
+            }).catch(err=>{});
             // console.log(index);
         },
         addshop(index){
-            this.onchange3(this.romdlist[index])
+            this.onchange3(this.romdlist[index]);
+            this.$toast('成功添加至购物车');
         }
     }
 }

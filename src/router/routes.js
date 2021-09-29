@@ -23,7 +23,7 @@ const routes = [
     component: cals,
     children: [
       {
-        path: "newshop",
+        path: "",
         name: "newshop",
         component: newshop,
       },

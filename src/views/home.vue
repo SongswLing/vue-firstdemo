@@ -16,7 +16,7 @@
     <recommendLists></recommendLists>
     <message></message>
     <recommend-font></recommend-font>
-    <commoditys :comdlists='comdlists'></commoditys>
+    <commoditys></commoditys>
   </div>
 </template>
     
@@ -79,7 +79,7 @@ export default {
     
 <style lang='less' scoped>
 .boxBig{
-  padding-bottom: 50px;
+  padding-bottom: 55px;
 }
 .swipers{
   position: relative;

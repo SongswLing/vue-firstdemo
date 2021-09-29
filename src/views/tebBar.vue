@@ -1,31 +1,33 @@
 <template>
   <div class="box">
-    <van-tabbar v-model="active" @change="onChange" route>
+    <van-tabbar v-model="active" @change="onChange" route active-color="#E71B1B">
       <van-tabbar-item  to="/home">
-        <span :class="$route.path=='/home' ?'active' : '' ">首页</span>
-        <template #icon="props">
-          <img :src="props.active ? home.active : home.inactive" />
-        </template>
+       <!-- <router-link to="/home"> -->
+       <template #icon="props">
+        <img :src="props.active ? home.active : home.inactive" class="icon"/>
+       </template>
+        <span>首页</span>
+       <!-- </router-link> -->
       </van-tabbar-item>
 
-      <van-tabbar-item  to="/cals/newshop">
-        <span :class="$route.path=='/cals/newshop' ?'active' : '' ">分类</span>
+      <van-tabbar-item  to="/cals">
+        <span>分类</span>
         <template #icon="props">
-          <img :src="props.active ? cals.active : cals.inactive" />
+          <img :src="props.active ? cals.active : cals.inactive" class="icon" />
         </template>
       </van-tabbar-item>
 
       <van-tabbar-item  to="/cart">
-        <span :class="$route.path=='/cart' ?'active' : '' ">购物车</span>
+        <span>购物车</span>
         <template #icon="props">
-          <img :src="props.active ? cart.active : cart.inactive" />
+          <img :src="props.active ? cart.active : cart.inactive" class="icon" />
         </template>
       </van-tabbar-item>
       
       <van-tabbar-item to="/info">
-        <span :class="$route.path=='/info' ?'active' : '' ">我的</span>
+        <span>我的</span>
         <template #icon="props">
-          <img :src="props.active ? info.active : info.inactive" />
+          <img :src="props.active ? info.active : info.inactive" class="icon" />
         </template>
       </van-tabbar-item>
     </van-tabbar>
@@ -58,7 +60,9 @@ export default {
   updated() {},
   methods: {
     onChange(index) {
+      console.log("index: ",index)
       this.active = index;
+      console.log("active:  ", this.active)
     },
   },
 };
@@ -77,6 +81,11 @@ export default {
 }
 .active {
   color: rgb(231, 27, 27);
+}
+.icon{
+  display:block;
+  width: 25px; 
+  height: 25px;
 }
 a {
   text-decoration: none;

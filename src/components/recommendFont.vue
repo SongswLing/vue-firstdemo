@@ -22,14 +22,15 @@ export default {
     
 <style lang='less' scoped>
     .recommend-font{
-        height: 40px;
+        height: 15px;
         display: flex;
         justify-content: center;
         align-items: center;
         padding:5px 5px;
         .left-radius{
             width: 40px;
-            
+            display: flex;
+            align-items: flex-end;
             // padding-left: 5px;
             margin-right: 10px;
              li:nth-child(1){
@@ -61,17 +62,20 @@ export default {
         }
         .fonts{
             font-size: 15px;
+            
         }
         .right-radius{
+            display: flex;
+            align-items: flex-end;
             width: 40px;
-            margin-left: 10px;
+            margin-left: 15px;
              li:nth-child(1){
             width: 6px;
             height: 6px;
             border-radius: 3px;
             background-color:red; 
             display: inline-block;
-                margin-right: 5px;
+            margin-right: 5px;
 
             }   
             li:nth-child(2){

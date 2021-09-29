@@ -59,7 +59,7 @@ export default {
     },
     methods: {
         tosite(){
-            this.$router.push('/siteEditor')
+            this.$router.push('/siteEditor').catch(err=>{});
         },
     },
     

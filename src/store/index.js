@@ -61,7 +61,6 @@ const mutations = {
       item.checked = checked;
     });
   },
-
   onchange2(state) {
     const length = state.cart.filter((item) => item.checked === true).length;
     // console.log(length);
@@ -77,6 +76,7 @@ const mutations = {
     let newshops = {};
     newshops.fonts = newshop.fonts;
     newshops.price = newshop.price;
+    newshops.old = newshop.old;
     newshops.checked = true;
     state.cart.push(newshops);
   },

@@ -28,8 +28,12 @@
             <div class="name">{{shopinfo.fonts}}</div>
         </div>
         <productslists ></productslists>
-
-
+        <recommend-font class="fonts"></recommend-font>
+        <div class="imginfo">
+            <img src="../assets/cals/1.png" alt="">
+        </div>
+        <cart-title></cart-title>
+        <commoditys></commoditys>
         <van-goods-action>
             <van-goods-action-icon icon="shop-o" text="店铺" color="#ee0a24"/>
             <van-goods-action-icon icon="chat-o" text="客服" color="#888181" />
@@ -44,9 +48,12 @@
     
 <script>
 import {mapMutations} from 'vuex'
+import recommendFont from '../components/recommendFont'
 import productslists from '../components/products-lists'
+import cartTitle from '../components/cart/cartTitle';
+import commoditys from '../components/commoditys'
 export default {
-    components:{productslists},
+    components:{productslists,recommendFont,cartTitle,commoditys},
     name:'products',
     data() {
         return {
@@ -180,6 +187,19 @@ export default {
         margin-top: 6px;
         font-weight: bold;
     }
+  }
+  /deep/.fonts{
+      .left-radius,.right-radius{
+           li{
+              background-color:#747070;
+          }
+      }
+  }
+  .imginfo{
+      padding: 10px;
+      img{
+          width: 100%;
+      }
   }
 }
     

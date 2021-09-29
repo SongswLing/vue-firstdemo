@@ -2,7 +2,7 @@
 <div class="box">
     <div class="lists">
       <ul>
-        <li><router-link to="/cals/newshop" :class="$route.path=='/cals/newshop' ? 'active':'' ">新品上架</router-link></li>
+        <li><router-link to="/cals" :class="$route.path=='/cals' ? 'active':'' ">新品上架</router-link></li>
         <li><router-link to="/cals/drink" :class="$route.path=='/cals/drink' ? 'active':'' ">饮料饮品</router-link></li>
         <li><router-link to="">酒类商城</router-link></li>
         <li><router-link to="">休闲零食</router-link></li>
@@ -53,7 +53,6 @@ export default {
     .active{
       color: red;
       background-color:#f1f1f1;
-      border-radius: none;
     }
     .active::before{
       content:'';

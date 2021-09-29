@@ -15,7 +15,7 @@ export default {
 <style lang='less' scoped>
     .message{
         // width: 100%;
-        height: 20px;
+        height: 25px;
         line-height:20px;
         background-color:#fff;
         // border: 1px solid #000;
