@@ -70,7 +70,7 @@ export default {
         border-radius: 5px;
         .main{
             // border: 1px solid #000;
-            // margin: 10px;
+            // margin: 10px;  
             padding: 15px;
             height: 85px;
             width: 325px;
