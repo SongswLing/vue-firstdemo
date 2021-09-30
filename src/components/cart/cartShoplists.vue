@@ -1,7 +1,9 @@
 <template>
     <div>
         <div class="comlists">
+            
             <div class="main" v-for="(item,index) in cart" :key="index">
+                <van-swipe-cell>
                 <van-checkbox v-model="item.checked" checked-color="#ee0a24" class="chbox" @click='onchecked(index)'></van-checkbox>
                 <img src="../../assets//cals/组 6.png" alt="" @click="toProducts(index)">
                 <div class="fonts" @click="toProducts(index)">{{item.fonts}}</div>
@@ -9,7 +11,12 @@
                 <div class="stepper">
                     <van-stepper v-model="item.conut" theme="round" button-size="22"  integer  @change="onChange($event)"/>
                 </div>
+                 <template #right>
+                    <van-button square text="删除" type="danger" class="delete-button" @click="deleted(index)"/>
+                </template>
+                </van-swipe-cell>
             </div>
+            
         </div>
     </div>
 </template>
@@ -31,7 +38,7 @@ export default {
         // console.log(this.cart[1].fonts);
     },
     methods: {
-        ...mapMutations(['onchange2']),
+        ...mapMutations(['onchange2','onchange6']),
         onChange(e){
             // console.log(e);
             // console.log(this.cart[0].conut)
@@ -44,6 +51,9 @@ export default {
             this.$router.push({
                 path:`/products/${index}`
             })
+        },
+        deleted(index){
+            this.onchange6(index)
         }
     },
     computed:{
@@ -63,6 +73,7 @@ export default {
             // margin: 10px;
             padding: 15px;
             height: 85px;
+            width: 325px;
             // display: flex;
             .chbox{
                 float: left;
@@ -113,7 +124,14 @@ export default {
                 /deep/.van-stepper__input{
                     width: 42px;
                 }
+        }:nth-child(1){
+            // border: 1px solid #000;
         }
-        
+        .delete-button {
+             height: 135%;
+             width: 150%;
+             margin-left: 10px;
+            //  transform:translateX(10px);
+        }
     }
 </style>

@@ -3,7 +3,7 @@
     <top-login></top-login>
     <my-order>
       <template slot="left">我的订单</template>
-      <template slot="right">全部订单<van-icon name="arrow" color="#918A8A"/></template>
+      <template slot="right"><span @click="goOrderlists">全部订单</span><van-icon name="arrow" color="#918A8A" /></template>
       <template slot="img1">
             <img src="../assets/info/待付款.png" alt="">
       </template>
@@ -30,21 +30,22 @@
       <!-- <template slot="right">全部订单<van-icon name="arrow" color="#918A8A"/></template> -->
 
       <template slot="img1">
-            <img src="../assets/info/个人资料 (1).png" alt="">
+            <span class="test1"><img src="../assets/info/个人资料 (1).png" alt=""></span>
+            <!-- <img src="../assets/info/个人资料 (1).png" alt=""> -->
       </template>
-      <template slot="fonts1">个人资料</template>
+      <template slot="fonts1"><!-- 个人资料 --><span class="test1">个人资料</span></template>
       <template slot="img2">
-            <img src="../assets/info/我的地址.png" alt="">
+            <span class="test"><img src="../assets/info/我的地址.png" alt=""></span>
       </template>
-      <template slot="fonts2">我的地址</template>
+      <template slot="fonts2"><span class="test">我的地址</span></template>
       <template slot="img3">
-            <img src="../assets/info/联系客服.png" alt="">
+            <span class="test"><img src="../assets/info/联系客服.png" alt=""></span>
       </template>
-      <template slot="fonts3">联系客服</template>
+      <template slot="fonts3"><span class="test">联系客服</span></template>
       <template slot="img4">
-            <img src="../assets/info/问题.png" alt="">
+            <span class="test"><img src="../assets/info/问题.png" alt=""></span>
       </template>
-      <template slot="fonts4">问题</template>
+      <template slot="fonts4"><span class="test">问题</span></template>
       <!-- <template slot="img5">
             <img src="../assets/info/退款.png" alt="">
       </template>
@@ -70,7 +71,9 @@ export default {
         
   },
   methods: {
-    
+    goOrderlists(){
+      this.$router.push('/myOrderlists')
+    }
 
   }
 };
@@ -81,6 +84,13 @@ export default {
   padding-bottom: 25px;
   .commod{
     transform:translateY(-30px);
+  }
+  .test1{
+    margin-left: 5px;
+  }
+  .test{
+    // border: 1px solid #000;
+    margin-left: 40px;
   }
 }
 </style>

@@ -92,6 +92,9 @@ const mutations = {
       item.checked = false;
     });
   },
+  onchange6(state, index) {
+    state.cart.splice(index, 1);
+  },
 };
 const getters = {
   pullice(state) {

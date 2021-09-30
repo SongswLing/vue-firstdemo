@@ -9,6 +9,7 @@ const newDrink = () => import("../components/cals/newDrink");
 const products = () => import("../components/products");
 const siteEditor = () => import("../components/siteEditor");
 const addressEdit = () => import("../components/addressEdit");
+const myOrderlists = () => import("../components/info/myOrderlists");
 const routes = [
   {
     path: "/",
@@ -62,6 +63,10 @@ const routes = [
   {
     path: "/addressEdit",
     component: addressEdit,
+  },
+  {
+    path: "/myOrderlists",
+    component: myOrderlists,
   },
 ];
 

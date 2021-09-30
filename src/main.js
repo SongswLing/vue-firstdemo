@@ -28,6 +28,9 @@ import {
   AddressList,
   AddressEdit,
   Area,
+  SwipeCell,
+  Tab,
+  Tabs,
 } from "vant";
 Vue.use(Button);
 Vue.use(Icon);
@@ -50,6 +53,9 @@ Vue.use(GoodsActionButton);
 Vue.use(AddressList);
 Vue.use(AddressEdit);
 Vue.use(Area);
+Vue.use(SwipeCell);
+Vue.use(Tab);
+Vue.use(Tabs);
 
 new Vue({
   router,

@@ -60,9 +60,9 @@ export default {
   updated() {},
   methods: {
     onChange(index) {
-      console.log("index: ",index)
+      // console.log("index: ",index)
       this.active = index;
-      console.log("active:  ", this.active)
+      // console.log("active:  ", this.active)
     },
   },
 };
