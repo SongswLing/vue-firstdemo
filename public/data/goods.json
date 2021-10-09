@@ -36,17 +36,31 @@
     "siteinfo": [
         {
           "name": "张三",
-          "call": 12223334355,
-          "site": "河南省郑州市中原区",
+          "tel": 12223334355,
+          "site": "河南省焦作市武陟县",
           "id": 1,
-          "checked": true
+          "checked": true,
+          "isDefaults":false,
+          "areaCode":"111111",
+          "postalCode":"454981",
+          "province":"河南省",
+          "city":"焦作市",
+          "county":"武陟县",
+          "addressDetail":"西陶镇周家庄村"
         },
         {
           "name": "李四",
-          "call": 12223334355,
+          "tel": 12223334355,
           "site": "河南省郑州市中原区",
           "id": 2,
-          "checked": false
+          "checked": false,
+          "isDefaults":false,
+          "areaCode":"222222",
+          "postalCode":"454980",
+          "province":"河南省",
+          "city":"郑州市",
+          "county":"中原区",
+          "addressDetail":"枫杨街道"
         }
     ]
 }

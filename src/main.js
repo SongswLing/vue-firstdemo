@@ -31,6 +31,9 @@ import {
   SwipeCell,
   Tab,
   Tabs,
+  Form,
+  Field,
+  Notify,
 } from "vant";
 Vue.use(Button);
 Vue.use(Icon);
@@ -56,6 +59,9 @@ Vue.use(Area);
 Vue.use(SwipeCell);
 Vue.use(Tab);
 Vue.use(Tabs);
+Vue.use(Form);
+Vue.use(Field);
+Vue.use(Notify);
 
 new Vue({
   router,

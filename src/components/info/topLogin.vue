@@ -2,7 +2,7 @@
     <div class="box">
         <div class="logins">
             <div class="images"><img src="../../assets/info/组 2.png" alt=""></div>
-            <div class="loginfont">登录/注册<van-icon name="arrow" color="#fff"/></div>
+            <div class="loginfont" @click="gosignin"><span>{{$store.state.username || "登录/注册"}}</span><van-icon name="arrow" color="#fff"/></div>
             <div class="bell"><van-icon name="bell" color="#fff" class="incos"/></div>
         </div>
         <div class="lists">
@@ -27,8 +27,18 @@
 </template>
     
 <script>
+import {mapState} from 'vuex'
 export default {
-    name:'topLogin'
+    name:'topLogin',
+    // props:['username'],
+    methods: {
+        gosignin(){
+            this.$router.push('/signIn')
+        }
+    },
+    created(){
+        console.log(this.username);
+    }
 }
 </script>
     
@@ -43,6 +53,7 @@ export default {
             display: flex;
             align-items:center;
             padding: 10px 20px;
+            position: relative;
             .images{
                 width: 40px;
                 height: 40px;
@@ -55,10 +66,12 @@ export default {
                 color: #fff;
             }
             .bell{
-                margin-left: 165px;
+                width: 18px;
+                height: 18px;
                 .incos{
-                    width: 18px;
-                    height: 18px;
+                    position: absolute;
+                    right: 20px;
+                    top: 17px;
                 }
             }
         }

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="boxs">
         <norBar>
             <template slot='left-icon' >
                 <van-icon name="arrow-left" color="#fff" @click="goback"/>
@@ -13,12 +13,12 @@
                 <div class="confont">
                     <div class="top">
                         <div class="name" >{{item.name}}</div>
-                        <div class="call" >{{item.call}}</div>
-                        <div v-if="item.id==1">默认</div>
+                        <div class="call" >{{item.tel}}</div>
+                        <div v-if="item.isDefaults==true">默认</div>
                     </div>
-                    <div class="bomsite">{{item.site}}</div>
+                    <div class="bomsite">{{item.site + item.addressDetail}}</div>
                 </div>
-                <van-icon name="edit" class="icons"/>
+                <van-icon name="edit" class="icons" @click="goEdit(item)"/>
             </div>
         <!-- <siteEditorlist :address="address"></siteEditorlist> -->
         <div class="addsite">
@@ -51,19 +51,28 @@ export default {
   computed:{
     //   ...mapGetters['gosite'],
   },
-  mounted() {
-      console.log(this.addsite);
+  created() {
       this.$nextTick(function(){
            this.siteinfoadd=this.$route.params.content
           console.log(this.siteinfo)
           console.log(this.siteinfoadd)
             let addnewsiteinfo={}
                 addnewsiteinfo.name=this.siteinfoadd.name
-                addnewsiteinfo.call=this.siteinfoadd.tel
+                addnewsiteinfo.tel=this.siteinfoadd.tel
                 addnewsiteinfo.site=this.siteinfoadd.province+this.siteinfoadd.city+this.siteinfoadd.county
                 addnewsiteinfo.checked=false
                 addnewsiteinfo.id=this.siteinfo.length+1
+                addnewsiteinfo.isDefaults=this.siteinfoadd.isDefault
+                addnewsiteinfo.areaCode=this.siteinfoadd.areaCode
+                addnewsiteinfo.postalCode=this.siteinfoadd.postalCode
+                addnewsiteinfo.province=this.siteinfoadd.province
+                addnewsiteinfo.city=this.siteinfoadd.city
+                addnewsiteinfo.county=this.siteinfoadd.county
+                addnewsiteinfo.addressDetail=this.siteinfoadd.addressDetail      
+
+                console.log(addnewsiteinfo.isDefaults); 
                 this.siteinfo.push(addnewsiteinfo)
+
       })
          
         },
@@ -86,12 +95,19 @@ export default {
             newlists.forEach((item)=>{
                 item.checked=false
             })
-        }  
+    },
+    goEdit(item){
+        this.$router.push({name:'addressEdit',params:{item}})
+        console.log(item.city)
+    }  
   },
 }
 </script>
     
 <style lang='less' scoped>
+.boxs{
+    padding-bottom: 45px;
+
 .main{
         width: 335px;
         background-color:#fff;
@@ -100,14 +116,16 @@ export default {
         padding:10px;
         display: flex;
         justify-content:space-between;
+        transform: translateY(-15px);
         .confont{
             width: 78%;
             // display: flex;
-            line-height: 35px;
+            // line-height: 35px;
             // align-items: space-around;
             .top{
                 display: flex;
                 font-size: 18px;
+                transform: translateY(5px);
                 .call{
                     margin-left: 15px;
                 }
@@ -115,6 +133,7 @@ export default {
             .bomsite{
                 font-size: 15px;
                 font-weight: 200;
+                transform: translateY(15px)
             }
         }
         .icons{
@@ -137,5 +156,6 @@ export default {
             border: 0.02667rem solid rgb(233, 70, 70);
 
         }
+    }
     }
 </style>

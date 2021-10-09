@@ -10,6 +10,7 @@ const products = () => import("../components/products");
 const siteEditor = () => import("../components/siteEditor");
 const addressEdit = () => import("../components/addressEdit");
 const myOrderlists = () => import("../components/info/myOrderlists");
+const signIn = () => import("../components/info/signIn");
 const routes = [
   {
     path: "/",
@@ -40,6 +41,7 @@ const routes = [
   },
   {
     path: "/info",
+    name: "info",
     component: info,
   },
   {
@@ -62,11 +64,17 @@ const routes = [
   },
   {
     path: "/addressEdit",
+    name: "addressEdit",
     component: addressEdit,
   },
   {
     path: "/myOrderlists",
     component: myOrderlists,
+  },
+  {
+    path: "/signIn",
+    name: "signIn",
+    component: signIn,
   },
 ];
 

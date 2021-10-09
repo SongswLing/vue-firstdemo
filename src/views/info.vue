@@ -35,9 +35,9 @@
       </template>
       <template slot="fonts1"><!-- 个人资料 --><span class="test1">个人资料</span></template>
       <template slot="img2">
-            <span class="test"><img src="../assets/info/我的地址.png" alt=""></span>
+            <span class="test" @click="goSiteEditor"><img src="../assets/info/我的地址.png" alt=""></span>
       </template>
-      <template slot="fonts2"><span class="test">我的地址</span></template>
+      <template slot="fonts2"><span class="test" >我的地址</span></template>
       <template slot="img3">
             <span class="test"><img src="../assets/info/联系客服.png" alt=""></span>
       </template>
@@ -67,14 +67,24 @@ import {mapState,mapMutations} from 'vuex'
 export default {
   components: { tebBar,topLogin,myOrder,cartTitle,commoditys},
   name: "info",
+  data() {
+    return{
+     
+    }
+  },
   computed:{
         
+  },
+  created() {
+    
   },
   methods: {
     goOrderlists(){
       this.$router.push('/myOrderlists')
+    },
+    goSiteEditor(){
+      this.$router.push('/siteEditor')
     }
-
   }
 };
 </script>

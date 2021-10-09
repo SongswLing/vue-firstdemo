@@ -17,6 +17,7 @@
             @save="onSave"
             @delete="onDelete"
             @change-detail="onChangeDetail"
+            @change-default="onChangeDefault"
         />
     </div>
 </template>
@@ -33,9 +34,15 @@ export default {
     return {
       areaList,
       searchResult: [],
-      addcenten:[]
+      addcenten:[],
+      editinfo:[]
       // content:[]
     };
+  },
+  mounted() {
+    this.editinfo=this.$route.params.item;
+    console.log(this.editinfo);
+    console.log(this.content);
   },
   methods: {
     ...mapMutations(['onchange4']),
@@ -47,6 +54,9 @@ export default {
     },
     onDelete() {
       Toast('delete');
+    },
+    onChangeDefault(value){
+      console.log(value);
     },
     onChangeDetail(val) {
       if (val) {
@@ -68,5 +78,11 @@ export default {
 </script>
     
 <style lang='less' scoped>
+.van-address-edit{
+  transform: translateY(-15px);
+    /deep/ .van-address-edit__fields{
+      width: 100%;
+    }
+}
     
 </style>
