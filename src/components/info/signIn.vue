@@ -5,7 +5,7 @@
       </div>
       <div class="loginway">
         <ul>
-          <li v-for="(item,index) in loginway" :key="index" @click="changeway(index)" :class="index==num ?'active' :'' ">{{item}}</li>
+          <li v-for="(item,index) in loginway" :key="index" @click="changeway(index)"><span v-if="index==num" class="active"></span>{{item}}</li> 
         </ul>
       </div>
       <div class="norlogin" v-show="num==0">
@@ -67,6 +67,15 @@
           </div>
       </van-form>
       </div>
+      <div class="siginbtn">
+        <div class="leftbtn">快速注册></div>
+        <div class="rightbtn">忘记密码?</div>
+      </div>
+      <div class="aplay">
+        <img src="../../assets/info/signIn/组 2(1).png" alt="">
+        <img src="../../assets/info/signIn/组 2.png" alt="">
+      </div>
+      <div class="clause">《<span>首选隐私政策</span>》</div>
     </div>
 </template>
     
@@ -128,13 +137,16 @@ export default {
         li{
           // display: inline-block;
           padding: 8px;
-          border: 1px solid #000;
+          // border: 1px solid #000;
+          position: relative;
           .active{
             width: 0px;
             height: 0px;
             border: 6px solid transparent; 
             border-bottom-color: #fff;
-
+            position: absolute;
+            top: 20px;
+            left:38%;
           // width: 1px;
           // height: 1px;
           // border-bottom: 6px solid #fff;
@@ -142,10 +154,43 @@ export default {
           // border-right: 6px solid transparent;
           // display: inline-block;
           // transform: translateY(10px);
-    }
+          }
         }
         
       }
     }
-    
+    .norlogin,.notelogin{
+      width: 355px;
+      margin: 0 auto;
+      border-radius: 5px;
+      .van-button--round{
+        margin-top: 50px;
+      }
+    }
+    .siginbtn{
+      width: 355px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      color: rgb(209, 35, 35);
+      font-size: 12px;
+      transform: translateY(-95px)
+    }
+    .aplay{
+      width: 130px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      transform: translateY(40px);
+      img{
+        width: 40px;
+        height: 40px;
+        
+      }
+    }
+    .clause{
+      text-align: center;
+      font-size: 10px;
+      transform: translateY(60px)
+    }
 </style>
