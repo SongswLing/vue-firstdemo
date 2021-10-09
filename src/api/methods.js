@@ -1,4 +1,4 @@
 import axios from "./index";
-export function loginUser(userinfo1) {
-  return axios.post("/api/login/hint", userinfo1);
+export function loginUser(userinfo) {
+  return axios.post("/api/login/hint", userinfo);
 }
