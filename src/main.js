@@ -5,6 +5,7 @@ import store from "./store";
 import "./assets/css/normal.css";
 import "amfe-flexible";
 import "postcss-pxtorem";
+import "font-awesome/css/font-awesome.min.css";
 Vue.config.productionTip = false;
 import {
   Button,

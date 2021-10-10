@@ -11,6 +11,7 @@ const siteEditor = () => import("../components/siteEditor");
 const addressEdit = () => import("../components/addressEdit");
 const myOrderlists = () => import("../components/info/myOrderlists");
 const signIn = () => import("../components/info/signIn");
+const enroll = () => import("../components/info/enroll");
 const routes = [
   {
     path: "/",
@@ -75,6 +76,11 @@ const routes = [
     path: "/signIn",
     name: "signIn",
     component: signIn,
+  },
+  {
+    path: "/enroll",
+    name: "enroll",
+    component: enroll,
   },
 ];
 

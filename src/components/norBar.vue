@@ -31,7 +31,7 @@ export default {
         // margin: 10px;
         width: 40px;
         height: 40px;
-        transform: translate(2px,32px);
+        transform: translate(2px,29px);
         text-align: center;
         line-height: 40px;
     }
