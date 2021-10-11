@@ -5,7 +5,6 @@ import store from "./store";
 import "./assets/css/normal.css";
 import "amfe-flexible";
 import "postcss-pxtorem";
-import "font-awesome/css/font-awesome.min.css";
 Vue.config.productionTip = false;
 import {
   Button,
@@ -35,6 +34,8 @@ import {
   Form,
   Field,
   Notify,
+  Popup,
+  Picker,
 } from "vant";
 Vue.use(Button);
 Vue.use(Icon);
@@ -63,6 +64,8 @@ Vue.use(Tabs);
 Vue.use(Form);
 Vue.use(Field);
 Vue.use(Notify);
+Vue.use(Popup);
+Vue.use(Picker);
 
 new Vue({
   router,

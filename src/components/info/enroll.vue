@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <nor-bar>
-            <template slot="left-icon"><van-icon name="arrow-left" color="#ffffff" size="20"/></template>
+            <template slot="left-icon"><van-icon name="arrow-left" color="#ffffff" size="20" /></template>
             注册
         </nor-bar>
         <div class="froms">
@@ -105,10 +105,13 @@ export default {
                      let {data:userlist}=await signUser(userinfosign);
                     // this.newname=userlist.username;
                     console.log(values)
+                    console.log(userlist)
                     // console.log(this.passwordbefore);
                     if(userlist.status==1){
                         // this.onchange7(userinfosign)
-                        // this.$router.push({path:'/signIn'})
+                        this.$router.push({path:'/signIn'})
+                        this.$toast('注册成功');
+
                         console.log("ok");
                     }else{
                         this.$toast('该账号已经被注册');
@@ -116,7 +119,11 @@ export default {
             }
            
     },
-    }
+    },
+    // backsignin(){
+    //                     this.$router.push({path:'/signIn'})
+
+    // }
 }
 </script>
     

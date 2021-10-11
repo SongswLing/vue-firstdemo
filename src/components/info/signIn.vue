@@ -95,7 +95,7 @@ export default {
   created() {
   },
   methods: {
-    ...mapMutations(['onchange7']),
+    ...mapMutations(['onchange8']),
     changeway(index){
       console.log(index);
       this.num=index
@@ -115,7 +115,7 @@ export default {
        this.newname=userlist.username;
        console.log(userlist)
        if(userlist.status==200){
-         this.onchange7(this.newname)
+         this.onchange8(this.newname)
          this.$router.push({path:'/info'})
          this.$toast('登录成功');
        }else{

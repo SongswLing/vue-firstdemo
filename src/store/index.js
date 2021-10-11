@@ -54,7 +54,12 @@ const state = {
       conut: 1,
     },
   ],
-  username: "",
+  myInfo: {
+    username: "",
+    images: "",
+    sex: "",
+    birth: "",
+  },
 };
 const mutations = {
   onchange1(state, checked) {
@@ -96,8 +101,16 @@ const mutations = {
   onchange6(state, index) {
     state.cart.splice(index, 1);
   },
-  onchange7(state, username) {
-    state.username = username;
+  onchange7(state, myinfo) {
+    state.myInfo.username = myinfo.tel + "";
+    state.myInfo.images = myinfo.imges + "";
+    state.myInfo.sex = myinfo.picker + "";
+    state.myInfo.birth = myinfo.brith + "";
+    console.log(myinfo);
+    console.log(state.myInfo);
+  },
+  onchange8(state, username) {
+    state.myInfo.username = username;
   },
 };
 const getters = {

@@ -2,7 +2,7 @@
     <div class="box">
         <div class="logins">
             <div class="images"><img src="../../assets/info/组 2.png" alt=""></div>
-            <div class="loginfont" @click="gosignin"><span>{{$store.state.username || "登录/注册"}}</span><van-icon name="arrow" color="#fff"/></div>
+            <div class="loginfont" @click="gosignin"><span>{{$store.state.myInfo.username || "登录/注册"}}</span><van-icon name="arrow" color="#fff"/></div>
             <div class="bell"><van-icon name="bell" color="#fff" class="incos"/></div>
         </div>
         <div class="lists">
@@ -30,14 +30,32 @@
 import {mapState} from 'vuex'
 export default {
     name:'topLogin',
+    data() {
+        return{
+            myInfo:{}
+        }
+    },
+    computed:{
+        // ...mapState(['myInfo'])
+    },
     // props:['username'],
     methods: {
         gosignin(){
-            this.$router.push('/signIn')
+            // if(this.$store.state.myInfo.username){
+            //     this.$router.push('/myInfo')
+            // }else{
+            //     this.$router.push('/signIn')
+            // }
+            this.$router.push('/myInfo')
+            console.log("1")
         }
     },
     created(){
-        console.log(this.username);
+        // console.log(this.username);
+        console.log(this.$store.state.myInfo)
+        this.myInfo=this.$store.state.myInfo
+        console.log(this.myInfo)
+
     }
 }
 </script>

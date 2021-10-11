@@ -5,6 +5,7 @@ const info = () => import("../views/info");
 const search = () => import("../components/search");
 const newcom = () => import("../components/newCom");
 import newshop from "../components/cals/newShop";
+import router from ".";
 const newDrink = () => import("../components/cals/newDrink");
 const products = () => import("../components/products");
 const siteEditor = () => import("../components/siteEditor");
@@ -12,6 +13,7 @@ const addressEdit = () => import("../components/addressEdit");
 const myOrderlists = () => import("../components/info/myOrderlists");
 const signIn = () => import("../components/info/signIn");
 const enroll = () => import("../components/info/enroll");
+const myInfo = () => import("../components/info/myInfo");
 const routes = [
   {
     path: "/",
@@ -81,6 +83,14 @@ const routes = [
     path: "/enroll",
     name: "enroll",
     component: enroll,
+  },
+  {
+    path: "/myInfo",
+    name: "myInfo",
+    component: myInfo,
+    meta: {
+      requireAuth: true,
+    },
   },
 ];
 
